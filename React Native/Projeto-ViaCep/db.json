@@ -1,0 +1,20 @@
+{
+    "cep": [
+        {
+            "id": 1,
+            "logradouro": "rua setemil",
+            "bairro": "pereba",
+            "cidade": "sao paulo",
+            "estado": "sao paulo",
+            "uf": "sp"
+        },
+        {
+            "id": 2,
+            "logradouro": "rua chernobBILL",
+            "bairro": "bill",
+            "cidade": "bora bil",
+            "estado": "bill gates?",
+            "uf": "bg"
+        }
+    ]
+}

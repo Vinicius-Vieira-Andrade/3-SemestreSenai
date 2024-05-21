@@ -1,5 +1,5 @@
 describe("template spec", () => {
-  // pra cada 'IT' como esse de baixo, server pra fazer uma verificacao, ele bate na rota e ve se ta funfando
+  // pra cada 'IT' como esse de baixo, serve pra fazer uma verificacao, ele bate na rota e ve se ta funfando
   it("passes", () => {
     cy.visit("/");
 
@@ -17,7 +17,7 @@ describe("template spec", () => {
 
   it("Verifica se tem uma lista com as playlist exibida", () => {
     //esoera, pra depois rodar
-    cy.wait(2000)
+    cy.wait(2000);
 
     //existe dentro dessa lista, um recurso que seja maior que zero
     cy.get("[aria-label='playlist-item']").should("have.length.greaterThan", 0);
@@ -26,7 +26,7 @@ describe("template spec", () => {
   // it('Clicar em uma opção de playlist e listar suas músicas', () => {
   //   //existe dentro dessa lista, pegue o primeiro que for clicado
   //   cy.get("[aria-label='playlist-item']").first().click()
-  
+
   //   //esoera, pra depois rodar
   //   cy.wait(1000)
   //   //pega a posicao 5 das opcoes
@@ -35,14 +35,30 @@ describe("template spec", () => {
   //   cy.scrollTo("top");
   // });
 
-  it('Playlist bolada', () => {
+  it("Playlist bolada", () => {
     //existe dentro dessa lista, pegue o primeiro que for clicado
-    cy.get("[aria-label='playlist-item']").eq(4).click()
-    //esoera, pra depois rodar
-    cy.wait(1000)
+    cy.get("[aria-label='playlist-item']").eq(4).click();
+    //espera, pra depois rodar
+    cy.wait(1000);
     //pega a pelo nome
-    cy.get("[aria-label='music-item']").contains("Eu Mudo").click();
+    cy.get("[aria-label='music-item']")
+      .contains("Vamo Marolar")
+      .click();
     //ajusta problema de scroll caso tenha, por conta da opcao de cima
+    cy.scrollTo("top");
+
+    cy.location()
+  });
+
+  it("Voltar para listagem de playlists", () => {
+
+    cy.get("[aria-label='playlist-item']").eq(2).click();
+
+    cy.wait(2000);
+
+    cy.get("[aria-label='music-item").first().click();
+
+
     cy.scrollTo("top");
   });
 });
